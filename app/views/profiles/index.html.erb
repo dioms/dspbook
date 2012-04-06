@@ -15,7 +15,7 @@
       <% else %>
         <td><%= image_tag '/anonymous-icon.jpg' %></td>
       <% end %>
-        <td><%= user.name %> </td>
+        <td><%= link_to user.name, profile_path(user) %> </td>
         <% if user.resume.exists? %>
         <td><%= link_to 'Resume', user.resume.url %> </td>
       <% else %>
