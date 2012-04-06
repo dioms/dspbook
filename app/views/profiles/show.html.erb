@@ -1,9 +1,13 @@
 <div class="hero-unit">
   <h1>  <%= image_tag @user.profpic.url(:thumb) unless !@user.profpic.exists? %>  <%= @user.name.capitalize %>
-    <% if current_user.id == @user.id %> 
-      <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-primary" %></h1>
-  <% else %>
-  </h1>
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id %> 
+        <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-primary" %></h1>
+    <% else %>
+    </h1>
+  <% end %>
+<% else %>
+</h1>
 <% end %>
 Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> <br />
 Email: <%= @user.email %>
