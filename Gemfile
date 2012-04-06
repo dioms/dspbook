@@ -11,6 +11,8 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'devise'
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'rghost'
+gem 'aws-s3'
+gem 'aws-sdk'
 
 # Gems used only for assets and not required
 # in production environments by default.
