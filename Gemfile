@@ -10,6 +10,7 @@ gem 'therubyracer'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'devise'
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'rghost'
 
 # Gems used only for assets and not required
 # in production environments by default.

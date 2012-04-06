@@ -1,3 +1,3 @@
-<h1>  <%# image_tag @user.profpic.url(:thumb) unless @user.profpic.empty? %>  <%= @user.name.capitalize %>'s profile <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-primary" %></h1>
-<%# link_to 'Resume', @user.resume.url unless @user.resume.empty? %>
+<h1>  <%= image_tag @user.profpic.url(:thumb) unless !@user.profpic.exists? %>  <%= @user.name.capitalize %>'s profile <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-primary" %></h1>
+<%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %>
 Email: <%= @user.email %>
