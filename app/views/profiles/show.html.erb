@@ -9,6 +9,9 @@
 <% else %>
 </h1>
 <% end %>
-Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> <br />
-Email: <%= @user.email %>
+<%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> <br />
+Email: <%= @user.email %> <br />
+<div class="well">
+  <%= "Bio: " + @user.bio  unless @user.bio.blank? %>
+</div>
 <div>
