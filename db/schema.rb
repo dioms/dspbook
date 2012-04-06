@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406065824) do
+ActiveRecord::Schema.define(:version => 20120406075657) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20120406065824) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

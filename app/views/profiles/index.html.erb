@@ -10,9 +10,17 @@
   <tbody>
     <% @user.each do |user| %>
       <tr>
+        <% if user.profpic.exists? %>
         <td><%= image_tag user.profpic.url(:thumb) %></td>
+      <% else %>
+        <td><%= image_tag '/anonymous-icon.jpg' %></td>
+      <% end %>
         <td><%= user.name %> </td>
+        <% if user.resume.exists? %>
         <td><%= link_to 'Resume', user.resume.url %> </td>
+      <% else %>
+        <td>No Resume</td>
+      <% end %>
     <% end %>
   </tbody>
 </table> <br />
