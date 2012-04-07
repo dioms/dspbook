@@ -9,9 +9,9 @@
 <% else %>
 </h1>
 <% end %>
-<%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> <br />
 Email: <%= @user.email %> <br />
 <div class="well">
   <%= "Bio: " + @user.bio  unless @user.bio.blank? %>
 </div>
+      <%= link_to 'Resume', @user.resume.url, unless !@user.resume.exists? :class => "btn btn-danger"%> or 
 <div>
