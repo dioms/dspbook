@@ -1,6 +1,18 @@
 <div class="hero-unit">
-<h1>Welcome to Discbook</h1>
-<p>Members:</p>
-<%= link_to "Create Profile", new_user_registration_path, :class => "btn btn-info" %>
-<p>Recruiters:</p>
-<%= link_to "View Members", profiles_path, :class => "btn btn-danger" %>
+  <center>
+    <h1>Welcome to Discbook</h1>
+    <br />
+    <% if !user_signed_in? %>
+      <h3>Companies:</h3>
+      <%= link_to "View Members", profiles_path, :class => "btn btn-danger" %>
+      <h3>Members:</h3>
+      <%= link_to "Sign in", new_user_session_path, :class => "btn btn-info" %>
+    <% else %>
+      <h3>Members:</h3>
+      <%= link_to "View Members", profiles_path, :class => "btn btn-danger" %>
+      <%= link_to "View Profile", profile_path(current_user), :class => "btn btn-info" %>
+      <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn btn-info" %>
+    <% end %>
+
+
+  </center>

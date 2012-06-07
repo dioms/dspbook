@@ -1,17 +1,29 @@
 <div class="hero-unit">
-  <h1>  <%= image_tag @user.profpic.url(:thumb) unless !@user.profpic.exists? %>  <%= @user.name.capitalize %>
-    <% if user_signed_in? %>
-      <% if current_user.id == @user.id %> 
-        <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-primary" %></h1>
-    <% else %>
-    </h1>
+  <h1>  <%= @user.name %>
+    <% if user_signed_in? && current_user.id == @user.id %>
+      <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-primary", :style => "float:right" %></h1>
+
   <% end %>
-<% else %>
-</h1>
-<% end %>
-Email: <%= @user.email %> <br />
-<div class="well">
-  <%= "Bio: " + @user.bio  unless @user.bio.blank? %>
+    </h1>
+    <hr>
+    <div class="row" id="info">
+      <div class="span2">
+        <% if @user.profpic.exists? %>
+          <%= image_tag @user.profpic.url(:thumb) %>  
+        <% else %>
+          <%= image_tag '/anonymous-icon.jpg' %>
+        <% end %>
+      </div>
+  <div class="span4" id="stuff">
+    Email: <%= @user.email %> <br />
+    Year: <%= @user.year unless @user.year.blank? %><br /> Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> </div>
 </div>
-      <%= link_to 'Resume', @user.resume.url, unless !@user.resume.exists? :class => "btn btn-danger"%> or 
-<div>
+<br />
+<% if !@user.bio.blank? %>
+  <div class="row">
+    <h3 style="text-align: center">Bio</h3>
+    <div class="well span8 offset1">
+      <%= @user.bio unless @user.bio.blank? %>
+    </div>
+  </div>
+<% end %>

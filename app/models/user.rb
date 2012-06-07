@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_attached_file :profpic,
-    :styles => { :medium => "300x300", :thumb => "100x100" },
+    :dependent => :destroy,
+    :styles => { :medium => "200x200", :thumb => "150x150" },
     :storage => :s3,
     :bucket => ENV['S3_BUCKET_NAME'],
     :s3_credentials => {
@@ -8,6 +9,7 @@ class User < ActiveRecord::Base
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   has_attached_file :resume, 
+    :dependent => :destroy,
     :storage => :s3,
     :bucket => ENV['S3_BUCKET_NAME'],
     :s3_credentials => {
@@ -22,8 +24,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-    :name, :profpic, :resume, :bio
+    :name, :profpic, :resume, :bio, :year
 
   validates_presence_of :name
+
+  YEARS = ['Freshman', 'Sophomore', 'Junior', 'Senior']
 
 end

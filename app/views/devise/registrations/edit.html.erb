@@ -1,19 +1,24 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="span6 offset3">
+  <div class="row well">
+    <center>
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email %></div>
 
-  <div><%= f.label :name %><br />
+  <div><%= f.label :name %>
   <%= f.text_field :name %></div>
 
+  <div><%= f.label :year, "School Year"  %>
+    <%= select(:user, :year, User::YEARS, {:include_blank => true} ) %></div>
 
-  <div><%= f.label :profile_picture %><br />
+  <div><%= f.label :profile_picture %>
   <%= f.file_field :profpic %></div>
 
-  <div><%= f.label :resume %><br />
+  <div><%= f.label :resume, "Resume (pdf only)" %>
   <%= f.file_field :resume %></div>
 
   <div><%= f.label :bio %><br />
@@ -36,3 +41,6 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
+</center>
+</div>
+</div>

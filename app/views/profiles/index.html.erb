@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="span8 offset2">
 <h1>Members</h1>
 <table class="table">
   <thead>
@@ -5,22 +7,30 @@
       <th>Picture</th>
       <th>Name</th>
       <th>Resume</th>
+      <th>Year</th>
     </tr>
   </thead>
   <tbody>
     <% @user.each do |user| %>
       <tr>
         <% if user.profpic.exists? %>
-        <td><%= image_tag user.profpic.url(:thumb) %></td>
-      <% else %>
-        <td><%= image_tag '/anonymous-icon.jpg' %></td>
-      <% end %>
+          <td><%= image_tag user.profpic.url(:thumb) %></td>
+        <% else %>
+          <td><%= image_tag '/anonymous-icon.jpg' %></td>
+        <% end %>
         <td><%= link_to user.name, profile_path(user) %> </td>
         <% if user.resume.exists? %>
-        <td><%= link_to 'Resume', user.resume.url %> </td>
-      <% else %>
-        <td>No Resume</td>
+          <td><%= link_to 'View Resume', user.resume.url, :class => "btn" %> </td>
+        <% else %>
+          <td>N/A</td>
+        <% end %>
+        <% if user.year.blank? %>
+          <td>N/A</td>
+        <% else %>
+          <td><%= user.year %></td>
+        <% end %>
       <% end %>
-    <% end %>
   </tbody>
 </table> <br />
+</div>
+</div>

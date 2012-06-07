@@ -36,8 +36,7 @@
               <%= link_to "Sign out", destroy_user_session_path, :class => 'navbaruser', :method => :delete %>
               </p>
             <% else %>
-              <%= link_to "Sign in", new_user_session_path %> |
-              <%= link_to "Sign up", new_user_registration_path %>
+              <%= link_to "Sign in", new_user_session_path %>
               </p>
             <% end %>
           </div>
@@ -64,9 +63,11 @@
         </div><!--/row-->
       </div><!--/content-->
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+      <center>
+        <footer>
+        <p>&copy; DISC 2012</p>
+        </footer>
+      </center>
 
     </div> <!-- /container -->
 
