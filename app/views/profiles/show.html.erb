@@ -16,7 +16,10 @@
       </div>
   <div class="span4" id="stuff">
     Email: <%= @user.email %> <br />
-    Year: <%= @user.year unless @user.year.blank? %><br /> Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> </div>
+    Graduation: <%= @user.graduation unless @user.graduation.blank? %><br />
+    <% if !user_signed_in? || current_user.id == @user.id %>
+    Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> </div>
+    <% end %>
 </div>
 <br />
 <% if !@user.bio.blank? %>

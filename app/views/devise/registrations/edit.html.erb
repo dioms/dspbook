@@ -12,8 +12,9 @@
   <div><%= f.label :name %>
   <%= f.text_field :name %></div>
 
-  <div><%= f.label :year, "School Year"  %>
-    <%= select(:user, :year, User::YEARS, {:include_blank => true} ) %></div>
+  <div><%= f.label :graduation, "Estimated Graduation"  %>
+    <%= select(:user, :graduation, User::GRADUATION, {:include_blank => true} ) %>
+  </div>
 
   <div><%= f.label :profile_picture %>
   <%= f.file_field :profpic %></div>

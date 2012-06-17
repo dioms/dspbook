@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20120406075657) do
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
     t.text     "bio"
-    t.string   "year"
+    t.string   "graduation"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

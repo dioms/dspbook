@@ -24,10 +24,11 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-    :name, :profpic, :resume, :bio, :year
+    :name, :profpic, :resume, :bio, :graduation
 
   validates_presence_of :name
 
-  YEARS = ['Freshman', 'Sophomore', 'Junior', 'Senior']
+  GRADUATION = ['Fall 2012', 'Spring 2013', 'Summer 2013', 'Fall 2013', 'Spring 2014',
+                'Summer 2014', 'Fall 2014', 'Spring 2015', 'Summer 2015', 'Fall 2015']
 
 end
