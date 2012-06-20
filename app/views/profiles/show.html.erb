@@ -18,8 +18,9 @@
     Email: <%= @user.email %> <br />
     Graduation: <%= @user.graduation unless @user.graduation.blank? %><br />
     <% if !user_signed_in? || current_user.id == @user.id %>
-      Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> </div>
-  <% end %>
+      Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %>
+    <% end %>
+  </div>
 </div>
 <br />
 <% if !@user.bio.blank? %>
