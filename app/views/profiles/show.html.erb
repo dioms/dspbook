@@ -4,22 +4,22 @@
       <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-primary", :style => "float:right" %></h1>
 
   <% end %>
-    </h1>
-    <hr>
-    <div class="row" id="info">
-      <div class="span2">
-        <% if @user.profpic.exists? %>
-          <%= image_tag @user.profpic.url(:thumb) %>  
-        <% else %>
-          <%= image_tag '/anonymous-icon.jpg' %>
-        <% end %>
-      </div>
+</h1>
+<hr>
+<div class="row" id="info">
+  <div class="span2">
+    <% if @user.profpic.exists? %>
+      <%= image_tag @user.profpic.url(:thumb) %>  
+    <% else %>
+      <%= image_tag '/anonymous-icon.jpg' %>
+    <% end %>
+  </div>
   <div class="span4" id="stuff">
     Email: <%= @user.email %> <br />
     Graduation: <%= @user.graduation unless @user.graduation.blank? %><br />
     <% if !user_signed_in? || current_user.id == @user.id %>
-    Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> </div>
-    <% end %>
+      Resume: <%= link_to 'Resume', @user.resume.url unless !@user.resume.exists? %> </div>
+  <% end %>
 </div>
 <br />
 <% if !@user.bio.blank? %>
@@ -30,3 +30,4 @@
     </div>
   </div>
 <% end %>
+</div>
