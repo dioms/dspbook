@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
     :name, :profpic, :resume, :bio, :graduation
 
   validates_presence_of :name
+  validates_attachment_content_type :profpic, :content_type => ["image/jpeg", "image/png", "image/jpg"]
+  validates_attachment_content_type :resume, :content_type => ["application/pdf"]
 
   GRADUATION = ['Fall 2012', 'Spring 2013', 'Summer 2013', 'Fall 2013', 'Spring 2014',
                 'Summer 2014', 'Fall 2014', 'Spring 2015', 'Summer 2015', 'Fall 2015']
