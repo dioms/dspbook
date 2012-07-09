@@ -13,7 +13,6 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'rghost'
 gem 'aws-s3'
 gem 'aws-sdk'
-gem 'fakes3'
 
 # Gems used only for assets and not required
 # in production environments by default.
