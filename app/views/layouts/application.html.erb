@@ -24,7 +24,7 @@
      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
      })();
 
-</script>
+     </script>
 
     <link href="images/favicon.ico" rel="shortcut icon">
     <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
@@ -37,7 +37,7 @@
       <div class="navbar-inner">
         <div class="container">
           <div class="logo">
-            <%= link_to "Discbook", root_path, :class => "brand" %>
+            <%= link_to "DISCBook", root_path, :class => "brand" %>
           </div>
           <div class="nav-collapse">
             <ul class="nav">
@@ -49,8 +49,7 @@
               <%= link_to "Sign out", destroy_user_session_path, :class => 'navbaruser', :method => :delete %>
               </p>
             <% else %>
-              <%= link_to "Sign in", new_user_session_path %> |
-              <%= link_to "Sign up", new_user_registration_path %>
+              <%= link_to "Sign in", new_user_session_path %>
               </p>
             <% end %>
           </div>
@@ -77,9 +76,11 @@
         </div><!--/row-->
       </div><!--/content-->
 
+      <center>
       <footer>
-        <p>&copy; Company 2012</p>
+      <p>ASU DISC &copy;2012</p>
       </footer>
+      </center>
 
     </div> <!-- /container -->
 
