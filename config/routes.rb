@@ -1,4 +1,4 @@
-Discbook::Application.routes.draw do
+DSPbook::Application.routes.draw do
 
   devise_for :users
   resources :profiles

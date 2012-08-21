@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Discbook::Application.load_tasks
+DSPbook::Application.load_tasks
